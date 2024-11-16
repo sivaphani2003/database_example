@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Form</title>
+    <script>
+        function handleRadioChange(value) {
+            // Hide all form sections
+            document.getElementById('bulk-upload-section').style.display = 'none';
+            document.getElementById('upload-data-section').style.display = 'none';
+            document.getElementById('retrieve-data-section').style.display = 'none';
+
+            // Display relevant section based on the selected radio button
+            if (value === 'bulk-upload') {
+                document.getElementById('bulk-upload-section').style.display = 'block';
+            } else if (value === 'upload-data') {
+                document.getElementById('upload-data-section').style.display = 'block';
+            } else if (value === 'retrieve-data') {
+                document.getElementById('retrieve-data-section').style.display = 'block';
+            }
+        }
+    </script>
+</head>
+<body>
+<h1>Select the operation to perform</h1>
+<form>
+
+    <!-- Radio Buttons -->
+    <label>
+        <input type="radio" name="option" value="bulk-upload" onclick="handleRadioChange(this.value)"> Bulk Upload
+    </label>
+    <label>
+        <input type="radio" name="option" value="upload-data" onclick="handleRadioChange(this.value)"> Upload Data
+    </label>
+    <label>
+        <input type="radio" name="option" value="retrieve-data" onclick="handleRadioChange(this.value)"> Retrieve Data
+    </label>
+</form>
+    <!-- Bulk Upload Section -->
+    <div id="bulk-upload-section" style="display: none; margin-top: 20px;">
+        <h3>Bulk Upload</h3>
+        <form action="/bulk-upload" method="post" enctype="multipart/form-data">
+            <label for="excel-upload">Upload Excel File:</label>
+            <input type="file" id="excel-upload" name="files" accept=".xls,.xlsx" required multiple>
+            <button type="submit">Upload</button>
+        </form>
+    </div>
+
+    <!-- Upload Data Section -->
+    <div id="upload-data-section" style="display: none; margin-top: 20px;">
+        <h3>Upload Your Data</h3>
+        <form action="/upload-data" method="post">
+            <!-- Name Fields -->
+            <label for="first-name">First Name:</label>
+            <input type="text" id="first-name" name="first-name" required><br><br>
+
+            <label for="last-name">Last Name:</label>
+            <input type="text" id="last-name" name="last-name" required><br><br>
+
+            <label for="phone-number">Phone Number:</label>
+            <input type="tel" id="phone-number" name="phone-number" required><br><br>
+
+            <label for="data-email">Email:</label>
+            <input type="email" id="data-email" name="email" required><br><br>
+
+            <!-- 30 Input Fields (field1 to field30) -->
+            <label for="field1">Field 1:</label>
+            <input type="text" id="field1" name="field1"><br><br>
+
+            <label for="field2">Field 2:</label>
+            <input type="text" id="field2" name="field2"><br><br>
+
+            <label for="field3">Field 3:</label>
+            <input type="text" id="field3" name="field3"><br><br>
+
+            <label for="field4">Field 4:</label>
+            <input type="text" id="field4" name="field4"><br><br>
+
+            <label for="field5">Field 5:</label>
+            <input type="text" id="field5" name="field5"><br><br>
+
+            <label for="field6">Field 6:</label>
+            <input type="text" id="field6" name="field6"><br><br>
+
+            <label for="field7">Field 7:</label>
+            <input type="text" id="field7" name="field7"><br><br>
+
+            <label for="field8">Field 8:</label>
+            <input type="text" id="field8" name="field8"><br><br>
+
+            <label for="field9">Field 9:</label>
+            <input type="text" id="field9" name="field9"><br><br>
+
+            <label for="field10">Field 10:</label>
+            <input type="text" id="field10" name="field10"><br><br>
+
+            <label for="field11">Field 11:</label>
+            <input type="text" id="field11" name="field11"><br><br>
+
+            <label for="field12">Field 12:</label>
+            <input type="text" id="field12" name="field12"><br><br>
+
+            <label for="field13">Field 13:</label>
+            <input type="text" id="field13" name="field13"><br><br>
+
+            <label for="field14">Field 14:</label>
+            <input type="text" id="field14" name="field14"><br><br>
+
+            <label for="field15">Field 15:</label>
+            <input type="text" id="field15" name="field15"><br><br>
+
+            <label for="field16">Field 16:</label>
+            <input type="text" id="field16" name="field16"><br><br>
+
+            <label for="field17">Field 17:</label>
+            <input type="text" id="field17" name="field17"><br><br>
+
+            <label for="field18">Field 18:</label>
+            <input type="text" id="field18" name="field18"><br><br>
+
+            <label for="field19">Field 19:</label>
+            <input type="text" id="field19" name="field19"><br><br>
+
+            <label for="field20">Field 20:</label>
+            <input type="text" id="field20" name="field20"><br><br>
+
+            <label for="field21">Field 21:</label>
+            <input type="text" id="field21" name="field21"><br><br>
+
+            <label for="field22">Field 22:</label>
+            <input type="text" id="field22" name="field22"><br><br>
+
+            <label for="field23">Field 23:</label>
+            <input type="text" id="field23" name="field23"><br><br>
+
+            <label for="field24">Field 24:</label>
+            <input type="text" id="field24" name="field24"><br><br>
+
+            <label for="field25">Field 25:</label>
+            <input type="text" id="field25" name="field25"><br><br>
+
+            <label for="field26">Field 26:</label>
+            <input type="text" id="field26" name="field26"><br><br>
+
+            <label for="field27">Field 27:</label>
+            <input type="text" id="field27" name="field27"><br><br>
+
+            <label for="field28">Field 28:</label>
+            <input type="text" id="field28" name="field28"><br><br>
+
+            <label for="field29">Field 29:</label>
+            <input type="text" id="field29" name="field29"><br><br>
+
+            <label for="field30">Field 30:</label>
+            <input type="text" id="field30" name="field30"><br><br>
+
+            <button type="submit">Submit</button>
+        </form>
+
+
+    </div>
+
+    <!-- Retrieve Data Section -->
+    <div id="retrieve-data-section" style="display: none; margin-top: 20px;">
+        <h3>Retrieve Data</h3>
+        <form action="/retrieve" method="get">
+            <label for="retrieve-name">Name:</label>
+            <input type="text" id="retrieve-name" name="name" required><br><br>
+
+            <label for="retrieve-email">Email:</label>
+            <input type="email" id="retrieve-email" name="email" required><br><br>
+
+            <button type="submit">Retrieve Data</button>
+        </form>
+    </div>
+
+</body>
+</html>
